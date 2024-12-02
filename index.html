@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Boxes</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container Styling */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        /* Box Styling */
+        .box {
+            flex: 1 1 calc(25% - 10px); /* 4 boxes per row */
+            max-width: calc(25% - 10px);
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #333;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Media Query: 2 Boxes Per Row */
+        @media all and (max-width: 800px) {
+            .box {
+                flex: 1 1 calc(50% - 10px); /* 2 boxes per row */
+                max-width: calc(50% - 10px);
+            }
+        }
+
+        /* Media Query: 1 Box Per Row */
+        @media all and (max-width: 500px) {
+            .box {
+                flex: 1 1 100%; /* 1 box per row */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Name 1</div>
+        <div class="box">Name 2</div>
+        <div class="box">Name 3</div>
+        <div class="box">Name 4</div>
+    </div>
+</body>
+</html>
